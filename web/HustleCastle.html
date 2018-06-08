@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/common.js"></script>
+    <title>Hustle Castle Portal Stat Calculator</title>
+</head>
+<body onload="populateSelects()">
+  <div class=title>Hustle Castle Portal Calculator</div>
+  <br>
+  <div>Soul Stealer Notes <input type=button value=View onclick="toggleVisibility('ss_notes', 'block')">
+    <ul id='ss_notes' style="display:none;">
+      <li>2x Soul Stealer = 180 Diamonds
+      <li>Recoup Strategies
+        <ol><li>100 + 100 = 2792 souls; 200 Diamonds (Most Efficient Soul Use)
+          <li>100 + 50 + 10 + 10 + 10 = 2573 souls; 180 Diamonds (Least Diamond Use)
+        </ol>
+        <br>
+      <li>3x Soul Stealer = 490 Diamonds
+      <li>Recoup Strategies
+        <ol><li>250 + 250 = 6752 souls; 500 Diamonds (Most Efficient Soul Use)
+          <li>250 + 100 + 100 + 10 + 10 + 10 + 10 = 6776 souls; 490 Diamonds (Least Diamond Use)
+        </ol>
+    </ul>
+  </div>
+  <div>Calculations Used <input type=button value=View onclick="toggleVisibility('calc_notes', 'block')">
+    <ul id='calc_notes' style="display:none;">
+      <li>Food Needed To Break Even by Level
+        <ul>
+          <li>Definition:  FspSR = Food Spent Per Soul Received
+          <li>Calculation: FspSR = (Food per Run / (Souls Received Per Run x Multiplier))
+        </ul>
+        <br>
+        <ul>
+          <li>Definition: TFN = Total Food Needed; TSN = Total Souls Needed
+          <li>TSR x FspSR = TFN
+        </ul>
+        <br>
+      <li>Time Needed for Portal to Stay Open
+        <ul>
+          <li>Definition:  IF = Initial Food; FPH = Food Per Hour
+          <li>Calculation: (TFN - IF)/FPH = Hours Needed
+        </ul>
+    </ul>
+  </div>
+  <br>
+  <div>
+    <span>Initial Food:</span><input id="initialFood" type=text style="width:100px"> 
+    <span>Food Per Hour:</span><input id="foodPerHour" type=text style="width:100px">
+  </div>
+  <div>
+    <span>Select Portal Level:</span><select id=portalLvl></select>
+    <span>Select Throne Level:</span><select id=throneLvl></select>
+  </div>
+  <div>
+    <div class=title>OPTIONAL</div>
+    <span>Hours spent sleeping:</span><select id=hoursSleeping></select>
+    <span>Dining Hall Storage:</span><input id="dhStorage" type=text style="width:100px">
+  </div>
+  <div>
+    <input type=button value="Calculate" onClick="displaySummaryOutput()">
+  </div>
+  <div id="output"></div>
+</body>
+</html>

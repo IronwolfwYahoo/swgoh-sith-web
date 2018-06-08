@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:url" content="http://sithhappens.net/swgoh/manageTBs.jsp">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Territory Battle Instance Management">
+        <meta property="og:description" content="Territory Battle Instance Management form">
+        <meta property="og:image" content="http://sithhappens.net/swgoh/images/probe_droid_preview.jpg">
+        <meta property="og:image:width" content="527">
+        <meta property="og:image:height" content="357">
+        <script src="js/common.js"></script>
+        <script src="js/manageTBs.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body onLoad="initPage();">
+        <div class="center">
+        <div id="TBInstances">
+        </div>
+        <div>&nbsp;</div>
+        <div id="actions" style="display:inline-block">
+            <input type="button" value="Add New Instance" onClick="showEditWindow('new');"/>
+        </div>
+        <div id="editInstanceDiv" class="popUP">
+            <div id="editWindowTitle" style="text-align:center;"><b>Add New Territory Battle</b></div>
+            <div>&nbsp;</div>
+            <input type="text" disabled="" id="TB_ID" placeholder="TB Instance ID"/>
+            <div style="display:inline-block">TB Type: </div><select id="Type"/>
+                <option value="HOTH_LS">HOTH_LS</option>
+                <option value="HOTH_DS">HOTH_DS</option>
+            </select>
+            <input style="margin-top:10px;"type="datetime-local" id="start" onchange="updateTBID();"/>
+            <input id="saveBtn" type="button" value="Save">
+            <input type="button" value="Cancel" onClick="cancelEdit();">
+        </div>
+        </div>
+        <table id="dataTable" style="display: none">
+        </table>
+    </body>
+</html>
